@@ -32,7 +32,7 @@
 
 `BaaS`是`Blockchain as a Service`——区块链即服务。其主要思路是，将区块链作为一种平台，将其封装成一个`PaaS`系统。
 
-<img src="images/baas.jpg" alt="Figure 2. Blockchain as a Service" style="zoom:50%;" />
+![Figure 2. Blockchain as a Service](images/baas.png)
 
 *Figure 2. Blockchain as a Service*
 
@@ -134,11 +134,15 @@
 
 1. 最简单粗暴的方式是用联盟链直接替换`etcd`。
 
-   `Kubernetes`和`etcd`在部署上是分开的，替换操作理论上是可行的。但是在功能上`Kubernetes`跟`etcd`是深度绑定的，依赖了很多`etcd`独有的特性，希望`Kubernetes`后续可以考虑跟`etcd`解耦。这种方式的优点是：联盟链可以拿到集群所有的元信息，未来的发展空间更大；改造后`Kubernetes`既支持原有的中心化场景，同时也支持去中心化场景，功能几乎不受损失。
+   `Kubernetes`和`etcd`在部署上是分开的，替换操作理论上是可行的。但是在功能上`Kubernetes`跟`etcd`是深度绑定的，依赖了很多`etcd`独有的特性，希望`Kubernetes`后续可以考虑跟`etcd`解耦。
+
+   这种方式的优点是：联盟链可以拿到集群所有的元信息，未来的发展空间更大；改造后`Kubernetes`既支持原有的中心化场景，同时也支持去中心化场景，功能几乎不受损失。
 
 2. 联盟链作为`Controller`。
 
-   这种方式类似于一些`Kubernetes`的跨集群方案。多个集群，每个集群里都安装同一个联盟链的一个节点，相当于在多个集群上面增加一层联盟链。这种方式的优点是底层修改比较小，很容易实施，联盟链节点的运维可以受益于`Kubernetes`的功能。缺点是功能比较受限，对于应用来说，需要增加新的资源类型，应用层需要有些适配。
+   这种方式类似于一些`Kubernetes`的跨集群方案。多个集群，每个集群里都安装同一个联盟链的一个节点，相当于在多个集群上面增加一层联盟链。
+
+   这种方式的优点是底层修改比较小，很容易实施，联盟链节点的运维可以受益于`Kubernetes`的功能。缺点是功能比较受限，对于应用来说，需要增加新的资源类型，应用层需要有些适配。
 
 3. 开放服务代理。
 
