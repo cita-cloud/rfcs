@@ -75,7 +75,7 @@ rpc ImportKey(ChangeKeyStatusRequest) returns (ImportKeyResponse);
 ```
 其中encryptedKey为base64编码后的密钥材料。
 
-建议删除接口
+建议修改接口
 ```
 rpc CheckTransactions(blockchain.RawTransactions) returns (common.StatusCode);
 ```
