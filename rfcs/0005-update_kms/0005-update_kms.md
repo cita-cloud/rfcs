@@ -96,7 +96,7 @@
   }
   ```
   ```
-  rpc ImportKey(ChangeKeyStatusRequest) returns (ImportKeyResponse);
+  rpc ImportKey(ImportKeyRequest) returns (ImportKeyResponse);
   ```
   增加密钥导入接口。其中`encryptedKey`为`base64`编码后的密钥材料。
 
